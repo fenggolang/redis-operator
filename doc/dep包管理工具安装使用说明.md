@@ -1,9 +1,10 @@
 ### 安装
 ```markdown
 1. 下载
-https://github.com/golang/dep/releases/download/v0.5.0/dep-windows-amd64.exe
+windows: https://github.com/golang/dep/releases/download/v0.5.0/dep-windows-amd64.exe
+linux: https://github.com/golang/dep/releases/download/v0.5.0/dep-linux-amd64
 
-2. 将dep-windows-amd64.exe放入GOPATH/bin下，修改名称为dep
+2. 将下载的文件放入GOPATH/bin下，修改名称为dep
 ```
 ---
 ### 使用
@@ -17,7 +18,6 @@ https://github.com/golang/dep/releases/download/v0.5.0/dep-windows-amd64.exe
 | dep status                            | 报告项目依赖项的状态                     |
 | dep version                           | 显示dep版本                              |
 | dep check                             | 检查导入，Gopkg.toml和Gopkg.lock是否同步 |
-
 
 
 #### dep 使用示例
