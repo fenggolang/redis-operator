@@ -21,6 +21,8 @@ $ cd $GOPATH/src/github.com/operator-framework
 $ git clone https://github.com/operator-framework/operator-sdk
 $ cd operator-sdk
 $ git checkout master
+# git checkout -b v0.0.7
+
 # 可能要手动下载如下依赖
 git clone https://go.googlesource.com/text
 git clone https://go.googlesource.com/tools

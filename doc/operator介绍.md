@@ -5,9 +5,24 @@
 和kubectl工具进行管理的应用程序。
   为了能够充分利用Kubernetes，你需要一组内聚的API来扩展，以便为在Kubernetes上运行的应用程序提供服务和管理。你可以将Operators
 视为在Kubernetes上管理此类应用程序的运行时。
+
+Operator是一种打包，部署和管理kubernetes应用程序的一种实现，可以实现对kubernetes应用程序的自动化运维,主要是针对有状态服务statefulset来实现一套自动化运维操作。
+它是基于kubernetes的CustomResourceDefine(CRD)来实现的.例如：我们可以开发一个mysql的operator,来实现mysql的集群的自动化运维，一键式的创建集群，自动化备份数据，
+当节点down掉后拉起节点自动恢复数据.指定数据去初始化创建一个mysql集群等功能，完全是自动化的完成，目前已经有很多operator了。
+比如：mysql-operator (oracle), mongo-operator, etcd-operator, redis-operator, prometheus-operator等等，但是开发的语言各不一样，实现的具体功能细节都大体相同，
+但是有的离实际的生产使用还是有一定差距的，比如：以上的很多operator都没有给出相关的性能测试报告等等。
+所以想在实际的生产中去用，还是需要自己去做相应的开发和严格的测试之后方能在生产环境中使用。
+
 ```
 ---
+#### operator如何开发
+```markdown
+开发operator主要有三种方式：
+1. 自己全部写相关的api定义和注册，controller的实现；
+２．使用operator-framework(coreos)的operator sdk生成模板代码，然后自己加上api相关的定义和controller的逻辑添加；
+３．使用kubernetes官方推荐的kubebuilder去生成模板代码，然后自己加上api相关的定义和controller的逻辑添加(https://book.kubebuilder.io/)；
 
+```
 #### operator-framework介绍
 [operator-framework github地址](https://github.com/operator-framework)
 ```markdown  
