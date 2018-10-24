@@ -19,7 +19,6 @@ linux: https://github.com/golang/dep/releases/download/v0.5.0/dep-linux-amd64
 | dep version                           | 显示dep版本                              |
 | dep check                             | 检查导入，Gopkg.toml和Gopkg.lock是否同步 |
 
-
 #### dep 使用示例
 ```markdown
 1. 切换到你需要开发的项目下

@@ -1,20 +1,20 @@
 ## 用户指南
 [operator-sdk user-guide](https://github.com/operator-framework/operator-sdk/blob/master/doc/user-guide.md)
-```markdown
+```bash
 本指南介绍了使用operator-sdk CLI工具和controller-runtime库API构建简单memcached-operator的示例.
 ```
 ### 要求
-```markdown
+```bash
 dep version v0.5.0+.
 git
 go version v1.10+.
 docker version 17.03+.
-kubectl version v1.10.0+.
+kubectl version v1.10.0+. (直接拷贝一个openshift环境的oc二进制文件然后创建一个kubectl软连接)
 Access to a kubernetes v.1.10.0+ cluster.
 ```
 ### 快速开始
 #### 检查和安装operator-sdk CLI
-```markdown
+```bash
 Operator SDK具有CLI工具，可帮助开发人员创建，构建和部署新的Operator项目
 $ mkdir -p $GOPATH/src/github.com/operator-framework
 $ cd $GOPATH/src/github.com/operator-framework
@@ -31,7 +31,7 @@ $ make dep
 $ make install
 ```
 #### 用operator-sdk CLI创建和部署一个operator-sdk
-```markdown
+```bash
 # Create an app-operator project that defines the App CR.
 $ mkdir -p $GOPATH/src/github.com/example-inc/
 # Create a new app-operator project
@@ -46,11 +46,13 @@ $ operator-sdk add api --api-version=app.example.com/v1alpha1 --kind=AppService
 $ operator-sdk add controller --api-version=app.example.com/v1alpha1 --kind=AppService
 
 # Build and push the app-operator image to a public registry such as quay.io
-$ operator-sdk build quay.io/example/app-operator
-$ docker push quay.io/example/app-operator
+$ operator-sdk build quay.io/fenggolang/app-operator
+$ docker login -u 2432018053@qq.com --password my_password quay.io
+
+$ docker push quay.io/fenggolang/app-operator
 
 # Update the operator manifest to use the built image name
-$ sed -i 's|REPLACE_IMAGE|quay.io/example/app-operator|g' deploy/operator.yaml
+$ sed -i 's|REPLACE_IMAGE|quay.io/fenggolang/app-operator|g' deploy/operator.yaml
 
 # Setup Service Account
 $ kubectl create -f deploy/service_account.yaml
