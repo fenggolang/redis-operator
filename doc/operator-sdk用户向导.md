@@ -9,8 +9,8 @@ dep version v0.5.0+.
 git
 go version v1.10+.
 docker version 17.03+.
-kubectl version v1.10.0+. (直接拷贝一个openshift环境的oc二进制文件然后创建一个kubectl软连接)
-Access to a kubernetes v.1.10.0+ cluster.
+kubectl version v1.10.0+. (直接拷贝一个openshift环境的oc二进制文件然后创建一个kubectl软连接,注意要unset http_proxy)
+Access to a kubernetes v.1.10.0+ cluster.(直接复制一份openshift下$HOME/.kube/config文件到本机即可,注意要unset http_proxy)
 ```
 ### 快速开始
 #### 检查和安装operator-sdk CLI
@@ -22,10 +22,6 @@ $ git clone https://github.com/operator-framework/operator-sdk
 $ cd operator-sdk
 $ git checkout master
 # git checkout -b v0.0.7
-
-# 可能要手动下载如下依赖
-git clone https://go.googlesource.com/text
-git clone https://go.googlesource.com/tools
 
 $ make dep
 $ make install
