@@ -1,5 +1,14 @@
+#### operator的由来
+```markdown
+容器发展主要经历了两个阶段:
+1. 第一个是应用镜像打包格式的标准化;
+2. 第二个是对容器更方便的配置,管理和调度这些资源;
+3. 第三个是随着每个应用的多元化和应用的专门化以后,未来在容器上会有越来越多的针对专门应用的自动化出现,此时operator横空出世,
+   operator的未来发展方向即是:以应用以服务为中心的一些自动化.
+```
 #### operator介绍
-[coreos operator](https://coreos.com/operators/)  
+一句话: Operator建立在k8s资源和控制器概念之上，但包含应用领域知识以处理常见任务。它们降低了运行分布式系统的复杂性，并帮助你专注于所需的配置，而不是手动配置和生命周期管理的细节。  
+
 ```markdown
   Operator是一种打包，部署和管理Kubernetes应用程序的方法。Kubernetes应用程序是一个部署在Kubernetes上并使用Kubernetes API
 和kubectl工具进行管理的应用程序。
