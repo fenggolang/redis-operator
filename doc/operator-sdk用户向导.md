@@ -15,7 +15,6 @@ Access to a kubernetes v.1.10.0+ cluster.(直接复制一份openshift下$HOME/.k
 ### 快速开始
 #### 检查和安装operator-sdk CLI
 ```bash
-Operator SDK具有CLI工具，可帮助开发人员创建，构建和部署新的Operator项目
 $ mkdir -p $GOPATH/src/github.com/operator-framework
 $ cd $GOPATH/src/github.com/operator-framework
 $ git clone https://github.com/operator-framework/operator-sdk
